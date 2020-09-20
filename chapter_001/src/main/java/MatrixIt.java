@@ -8,13 +8,13 @@ public class MatrixIt implements Iterator<Integer> {
     private int row = 0;
     private int column = 0;
 
-    MatrixIt(int[][] data) {
+    public MatrixIt(int[][] data) {
         this.data = data;
     }
 
     @Override
     public boolean hasNext() {
-        return (column < data[row].length || row != data.length - 1);
+        return ((column < data[row].length) ||  row != data.length - 1);
     }
 
     @Override
