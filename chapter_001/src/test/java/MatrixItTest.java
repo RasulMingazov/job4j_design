@@ -86,6 +86,7 @@ public class MatrixItTest {
         int[][] in = {{},{},{}};
         MatrixIt it = new MatrixIt(in);
          assertThat(it.hasNext(), is(false));
+
         System.out.println(it.hasNext());
         System.out.println(in.length);
         System.out.println(in[0].length);
