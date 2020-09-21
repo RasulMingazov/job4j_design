@@ -1,6 +1,20 @@
+sudo: false
+dist: trusty
 language: java
-dist: xenial
-sudo: required
-
+env:
+  global:
+    - GRADLE_OPTS="-Xmx512m"
 jdk:
-  - openjdk11
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk7
+cache:
+  directories:
+    - $HOME/.gradle
+    - $HOME/.m2
+    - ./build
+    - ./.gradle
+script:
+  ./gradlew check --info
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
