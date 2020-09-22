@@ -52,7 +52,9 @@ public class MatrixItTest {
         int[][] in = {
                 {1}, {}, {}, {}, {2}
         };
+
         MatrixIt it = new MatrixIt(in);
+
         assertThat(it.next(), is(1));
         assertThat(it.next(), is(2));
     }

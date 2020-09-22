@@ -29,16 +29,19 @@ public class MatrixIt implements Iterator<Integer> {
     public Integer next() {
         if (!hasNext()) {
             throw new NoSuchElementException();
+
         } else {
             if (column >= data[row].length) {
-                row++;
-                column = 0;
+                    row++;
+                    column = 0;
             }
-            try {
+            if (data[row].length == 0) {
+                while (data[row].length == 0) {
+                    row++;
+                }
+                return data[row][column];
+            }
             return data[row][column++];
-            } catch (IndexOutOfBoundsException e) {
-               return next();
-            }
         }
     }
 }
