@@ -1,17 +1,21 @@
+package iterator;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class ArrayIt implements Iterator<Integer> {
-    private final int[] data;
-    private int point = 0;
+public class BackwardArrayIt implements Iterator<Integer> {
 
-    ArrayIt(int[] data) {
+    private final int[] data;
+    private int point;
+
+    BackwardArrayIt(int[] data) {
         this.data = data;
+        point = data.length - 1;
     }
 
     @Override
     public boolean hasNext() {
-        return point < data.length;
+        return point >= 0;
     }
 
     @Override
@@ -19,6 +23,6 @@ public class ArrayIt implements Iterator<Integer> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        return data[point++];
+        return data[point--];
     }
 }

@@ -1,3 +1,5 @@
+package iterator;
+
 import static org.junit.Assert.*;
 
 import static org.junit.Assert.assertThat;

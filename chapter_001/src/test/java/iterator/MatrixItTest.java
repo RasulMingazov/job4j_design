@@ -1,3 +1,5 @@
+package iterator;
+
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -54,7 +56,6 @@ public class MatrixItTest {
         };
 
         MatrixIt it = new MatrixIt(in);
-
         assertThat(it.next(), is(1));
         assertThat(it.next(), is(2));
     }
@@ -91,6 +92,10 @@ public class MatrixItTest {
         int[][] in = {{},{},{}};
         MatrixIt it = new MatrixIt(in);
         assertThat(it.hasNext(), is(false));
+        assertThat(it.hasNext(), is(false));
+        assertThat(it.hasNext(), is(false));
+        assertThat(it.hasNext(), is(false));
+
 
     }
 }
